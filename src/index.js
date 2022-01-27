@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './Style.scss';
+import { MoralisProvider } from "react-moralis";
+
+const appId = process.env.REACT_APP_APPID
+const serverUrl = process.env.REACT_APP_SERVERURL
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MoralisProvider appId={appId} serverUrl={serverUrl}>
+      <App />
+    </MoralisProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
