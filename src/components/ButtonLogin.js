@@ -1,0 +1,49 @@
+import React from "react";
+import { useMoralis } from "react-moralis";
+import ButtonRGB from "./ui/ButtonRGB";
+import { IoWalletOutline } from "react-icons/io5";
+
+export default function ButtonLogin() {
+  const { authenticate, isAuthenticated, logout, user } = useMoralis();
+
+  const [hovered, setHovered] = React.useState(false);
+
+  return !isAuthenticated ? (
+    <ButtonRGB
+      className="bg-dark border-primary"
+      onClick={() => authenticate({ signingMessage: "QIFSHA" })}
+    >
+      <IoWalletOutline className="me-3" /> LogIn
+    </ButtonRGB>
+  ) : (
+    <div
+      style={{ zIndex: 0 }}
+      className="position-relative"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <ButtonRGB className="bg-dark border-primary w-100">
+        <IoWalletOutline className="me-3" />{" "}
+        {` 0x...${user.attributes.ethAddress.slice(-4)}`}
+      </ButtonRGB>
+      <ul>
+        <li
+          class=" "
+          className="position-absolute bg-dark rgbButton rounded border-primary"
+          style={{
+            zIndex: hovered ? 0 : -1,
+            top: hovered ? 60 : 0,
+            left: "0",
+            right: "0",
+            transition: "0.33s",
+            opacity: hovered ? 1 : 0,
+            margin: "0rem 1rem",
+          }}
+          onClick={() => logout()}
+        >
+          Logout
+        </li>
+      </ul>
+    </div>
+  );
+}

@@ -1,12 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import './Style.scss';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import "./Style.scss";
 import { MoralisProvider } from "react-moralis";
 
-const appId = process.env.REACT_APP_APPID
-const serverUrl = process.env.REACT_APP_SERVERURL
+const appId = process.env.REACT_APP_APPID;
+const serverUrl = process.env.REACT_APP_SERVERURL;
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,7 +14,7 @@ ReactDOM.render(
       <App />
     </MoralisProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
