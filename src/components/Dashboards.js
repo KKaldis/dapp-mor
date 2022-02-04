@@ -39,27 +39,27 @@ export default function Dashboards() {
   };
 
   return (
-    <div className="">
-      <div className="p-5 rounded rgbShadow border border-secondary glassMorphism">
+    <div className=" text-center">
+      <div className="p-3 p-sm-3 p-lg-4 p-xxl-5 rounded rgbShadow border border-secondary glassMorphism">
         <h3>Send Coins</h3>
         <div>
           <input
             value={address}
-            className="form-control my-4"
+            className="form-control mt-4"
             placeholder="Address"
             onChange={(e) => setAddress(e.target.value)}
           />
           <input
             type="number"
             value={amount}
-            className="form-control my-4"
+            className="form-control mt-4"
             placeholder="Amount"
             onChange={(e) => setAmount(e.target.value)}
           />
         </div>
         <ButtonRGB
           onClick={() => send(amount, address)}
-          className="border-secondary"
+          className="border-secondary mt-5"
         >
           Send
         </ButtonRGB>

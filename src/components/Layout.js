@@ -3,17 +3,62 @@ import TopBar from "./TopBar";
 
 export default function Layout(props) {
   return (
-    <div div className="vw-100 vh-100 d-flex flex-column bg-dark text-light">
+    <div className="vw-100 vh-100 d-flex flex-column bg-dark text-light">
       <TopBar />
-      <div className="d-flex flex-row align-items-center h-100">
+      <div
+        className="d-flex flex-row align-items-center h-100"
+        style={{ maxHeight: "inherit", boxSizing: "border-box" }}
+      >
         <Side />
-        <div className="w-100 d-flex justify-content-center">
-          <div className="cube"></div>
-          <div className="cube"></div>
-          <div className="cube"></div>
-          <div className="cube"></div>
-          <div className="cube"></div>
-          <div className="cube"></div>
+        <div
+          className="cube"
+          style={{
+            maxHeight: "inherit",
+            maxWidth: "inherit",
+            boxSizing: "border-box",
+          }}
+        ></div>
+        <div
+          className="cube"
+          style={{
+            maxHeight: "inherit",
+            maxWidth: "inherit",
+            boxSizing: "border-box",
+          }}
+        ></div>
+        <div
+          className="cube"
+          style={{
+            maxHeight: "inherit",
+            maxWidth: "inherit",
+            boxSizing: "border-box",
+          }}
+        ></div>
+        <div
+          className="cube"
+          style={{
+            maxHeight: "inherit",
+            maxWidth: "inherit",
+            boxSizing: "border-box",
+          }}
+        ></div>
+        <div
+          className="cube"
+          style={{
+            maxHeight: "inherit",
+            maxWidth: "inherit",
+            boxSizing: "border-box",
+          }}
+        ></div>
+        <div
+          className="cube"
+          style={{
+            maxHeight: "inherit",
+            maxWidth: "inherit",
+            boxSizing: "border-box",
+          }}
+        ></div>
+        <div className="w-100 h-100 d-flex align-items-center justify-content-center">
           {props.children}
         </div>
       </div>
