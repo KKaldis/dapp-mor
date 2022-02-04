@@ -9,6 +9,12 @@ export default function Layout(props) {
       <div className="d-flex flex-row align-items-center h-100">
         <Side />
         <div className="w-100 d-flex justify-content-center">
+
+          <div className="cube"></div>
+          <div className="cube"></div>
+          <div className="cube"></div>
+          <div className="cube"></div>
+          <div className="cube"></div>
           {props.children}
         </div>
       </div>

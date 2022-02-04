@@ -17,10 +17,11 @@ export default function ButtonLogin() {
     </ButtonRGB>
   ) : (
     <div
-      style={{ zIndex: 0 }}
-      className="position-relative"
+      style={{ zIndex: 0, height: 60 }}
+      className="position-relative text-center"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onClick={() => setHovered(false)}
     >
       <ButtonRGB className="bg-dark border-primary w-100">
         <IoWalletOutline className="me-3" />{" "}

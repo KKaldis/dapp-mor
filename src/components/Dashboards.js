@@ -37,31 +37,33 @@ export default function Dashboards() {
   };
 
   return (
-    <div className="p-5 rounded rgbShadow border border-secondary">
-      <h3>Send Coins</h3>
-      <div>
-        <input
-          value={address}
-          className="form-control my-4"
-          placeholder="Address"
-          onChange={(e) => setAddress(e.target.value)}
-        />
-        <input
-          type="number"
-          value={amount}
-          className="form-control my-4"
-          placeholder="Amount"
-          onChange={(e) => setAmount(e.target.value)}
-        />
+    <div className="">
+      <div className="p-5 rounded rgbShadow border border-secondary glassMorphism">
+        <h3>Send Coins</h3>
+        <div>
+          <input
+            value={address}
+            className="form-control my-4"
+            placeholder="Address"
+            onChange={(e) => setAddress(e.target.value)}
+          />
+          <input
+            type="number"
+            value={amount}
+            className="form-control my-4"
+            placeholder="Amount"
+            onChange={(e) => setAmount(e.target.value)}
+          />
+        </div>
+        <ButtonRGB
+          onClick={() => send(amount, address)}
+          className="border-secondary"
+        >
+          Send
+        </ButtonRGB>
       </div>
-      <ButtonRGB
-        onClick={() => send(amount, address)}
-        className="border-secondary"
-      >
-        Send
-      </ButtonRGB>
       {data !== null && (
-        <div className="w-lg-50 w-md-75 w-sm-100 p-5 my-5 border border-1 border-light rounded text-wrap">
+        <div className="p-5 my-5 border border-secondary rounded text-wrap">
           <div>
             <h5>Your Decentralized Receipt!</h5>
             {"From :"}

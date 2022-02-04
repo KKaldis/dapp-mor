@@ -22,6 +22,7 @@
   //   border: 1px solid #d2bdff;
   transition: all 0.1s linear;
   border: 1px #ffffff23 solid;
+  align-items: center;
 
   &:hover {
     text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 20px #82bedc,
@@ -157,5 +158,71 @@
 @keyframes hueRotation {
   to {
     filter: hue-rotate(360deg);
+  }
+}
+.glassMorphism {
+  z-index: 1;
+  background: rgba(108, 130, 255, 0.05);
+  // box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur(0.5rem);
+  -webkit-backdrop-filter: blur(0.5rem);
+}
+
+.cube {
+  box-shadow: 0px 0px 2px #0061fc;
+  // border-radius: 1px;
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px darken(#0040c1, 8%);
+  transform-origin: top left;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  animation: cube 12s ease-in forwards infinite, hueRotation 4s linear infinite;
+
+  &:nth-child(2n) {
+    border-color: lighten(#0040c1, 10%);
+  }
+
+  &:nth-child(2) {
+    animation-delay: 2s;
+    left: 25vw;
+    top: 40vh;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 4s;
+    left: 75vw;
+    top: 50vh;
+  }
+
+  &:nth-child(4) {
+    animation-delay: 6s;
+    left: 90vw;
+    top: 10vh;
+  }
+
+  &:nth-child(5) {
+    animation-delay: 8s;
+    left: 10vw;
+    top: 85vh;
+  }
+
+  &:nth-child(6) {
+    animation-delay: 10s;
+    left: 50vw;
+    top: 10vh;
+  }
+}
+
+@keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
   }
 }
