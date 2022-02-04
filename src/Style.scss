@@ -169,14 +169,16 @@
 }
 
 .cube {
-  box-shadow: 0px 0px 2px #0061fc;
+  box-shadow: inset 0px 0px 6px #0061fc, 0px 0px 2px #0061fc;
+  border-radius: 1px;
   // border-radius: 1px;
   position: absolute;
   top: 80vh;
   left: 45vw;
   width: 10px;
   height: 10px;
-  border: solid 1px darken(#0040c1, 8%);
+  // background-color: #0040c1;
+  // border: solid 1px darken(#0040c1, 8%);
   transform-origin: top left;
   transform: scale(0) rotate(0deg) translate(-50%, -50%);
   animation: cube 12s ease-in forwards infinite, hueRotation 4s linear infinite;
