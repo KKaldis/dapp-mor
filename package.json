@@ -13,12 +13,15 @@
     "drizzle-react-components": "^1.4.0",
     "framer-motion": "^6.2.3",
     "geth": "^0.4.0",
+    "html-webpack-plugin": "^5.5.0",
     "react": "^17.0.2",
     "react-bootstrap": "^2.1.1",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "react-moralis": "^1.1.0",
+    "react-redux": "^7.2.6",
     "react-scripts": "5.0.0",
+    "redux-logger": "^3.0.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -50,6 +53,7 @@
     "prettier": "^2.4.1",
     "redux-devtools-extension": "^2.13.9",
     "sass": "^1.49.0",
-    "sass-loader": "^12.4.0"
+    "sass-loader": "^12.4.0",
+    "webpack": "^5.68.0"
   }
 }

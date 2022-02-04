@@ -3,7 +3,7 @@ import { useState } from "react";
 import ButtonRGB from "./ui/ButtonRGB";
 import Modal from "./ui/Modal";
 
-export default function Dashboards() {
+export default function Transfer() {
   const { user, Moralis } = useMoralis();
   const [from, setFrom] = useState();
   const [to, setTo] = useState();
@@ -41,7 +41,7 @@ export default function Dashboards() {
   return (
     <div className=" text-center">
       <div className="p-3 p-sm-3 p-lg-4 p-xxl-5 rounded rgbShadow border border-secondary glassMorphism">
-        <h3>Send Coins</h3>
+        <h3>Transfer Assets</h3>
         <div>
           <input
             value={address}

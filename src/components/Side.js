@@ -10,10 +10,10 @@ export default function Side() {
     >
       <ButtonRGB
         className="bg-dark border-secondary d-flex
-       justify-content-center"
+      justify-content-center"
       >
-        <BiSend className="me-3" />
-        Transfer
+        <BiRocket className="me-3" />
+        Upcoming
       </ButtonRGB>
       <ButtonRGB
         className="bg-dark border-secondary d-flex
@@ -24,17 +24,17 @@ export default function Side() {
       </ButtonRGB>
       <ButtonRGB
         className="bg-dark border-secondary d-flex
-      justify-content-center"
+       justify-content-center"
       >
-        <BiCoin className="me-3" />
-        Assets
+        <BiSend className="me-3" />
+        Transfer
       </ButtonRGB>
       <ButtonRGB
         className="bg-dark border-secondary d-flex
       justify-content-center"
       >
-        <BiRocket className="me-3" />
-        Upcoming
+        <BiCoin className="me-3" />
+        Assets
       </ButtonRGB>
       <ButtonRGB
         className="bg-dark border-secondary d-flex
