@@ -13,6 +13,7 @@ export default function Layout(props) {
           <div className="cube"></div>
           <div className="cube"></div>
           <div className="cube"></div>
+          <div className="cube"></div>
           {props.children}
         </div>
       </div>
