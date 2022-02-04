@@ -29,7 +29,6 @@ export default function ButtonLogin() {
       </ButtonRGB>
       <ul>
         <li
-          class=" "
           className="position-absolute bg-dark rgbButton rounded border-primary"
           style={{
             zIndex: hovered ? 0 : -1,
