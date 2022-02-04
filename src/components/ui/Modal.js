@@ -19,7 +19,7 @@ const Modal = (props) => {
       transition={{ duration: 0.5, ease: "easeInOut" }}
       animate={props.show ? "open" : "closed"}
       onClick={props.handleModal}
-      className="Overlay"
+      className="Overlay "
     >
       <div className="Modal rgbShadow bg-dark">{props.children}</div>
     </motion.div>

@@ -65,11 +65,11 @@ export default function Dashboards() {
           Send
         </ButtonRGB>
       </div>
-      {(data !== null && modalToggle === true) && (
-        <Modal show={modalToggle} handleModal={()=>setModalToggle(false)}>
+      {data !== null && modalToggle === true && (
+        <Modal show={modalToggle} handleModal={() => setModalToggle(false)}>
           <div className="p-5 border border-secondary rounded text-wrap">
             <div>
-              <h5>Your Decentralized Receipt!</h5>
+              <h5>Successful Transfer</h5>
               {"From :"}
               {from}
             </div>
