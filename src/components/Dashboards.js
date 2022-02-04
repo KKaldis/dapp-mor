@@ -2,6 +2,7 @@ import React from "react";
 import { useMoralis } from "react-moralis";
 import { useState } from "react";
 import ButtonRGB from "./ui/ButtonRGB";
+import Modal from "./ui/Modal";
 
 export default function Dashboards() {
   const { user, Moralis } = useMoralis();
@@ -14,6 +15,7 @@ export default function Dashboards() {
   const [gasLimit, setGasLimit] = useState();
   const [amount, setAmount] = useState();
   const [address, setAddress] = useState();
+  const [modalToggle, setModalToggle] = useState(false);
   // const [user, setUserAddress] = useState()
   const [data, setData] = useState(null);
   const decimals = 1000000000000000000;
@@ -34,6 +36,7 @@ export default function Dashboards() {
     setGasLimit(parseInt(response.gasLimit._hex) / decimals);
     console.log(response);
     setData(response);
+    setModalToggle(true);
   };
 
   return (
@@ -62,41 +65,43 @@ export default function Dashboards() {
           Send
         </ButtonRGB>
       </div>
-      {data !== null && (
-        <div className="p-5 my-5 border border-secondary rounded text-wrap">
-          <div>
-            <h5>Your Decentralized Receipt!</h5>
-            {"From :"}
-            {from}
+      {(data !== null && modalToggle === true) && (
+        <Modal show={modalToggle} handleModal={()=>setModalToggle(false)}>
+          <div className="p-5 border border-secondary rounded text-wrap">
+            <div>
+              <h5>Your Decentralized Receipt!</h5>
+              {"From :"}
+              {from}
+            </div>
+            <div>
+              {"To: "}
+              {to}
+            </div>
+            <div>
+              {"Confimations: "}
+              {confirmations}
+            </div>
+            <div>
+              {"Hash: "}
+              {hash}
+            </div>
+            <div>
+              {"Amount: "}
+              {value}
+              {"₭"}
+            </div>
+            <div>
+              {"Gas Fees: "}
+              {gasPrice}
+              {"₭"}
+            </div>
+            <div>
+              {"Gas Limit: "}
+              {gasLimit}
+              {"₭"}
+            </div>
           </div>
-          <div>
-            {"To: "}
-            {to}
-          </div>
-          <div>
-            {"Confimations: "}
-            {confirmations}
-          </div>
-          <div>
-            {"Hash: "}
-            {hash}
-          </div>
-          <div>
-            {"Amount: "}
-            {value}
-            {"₭"}
-          </div>
-          <div>
-            {"Gas Fees: "}
-            {gasPrice}
-            {"₭"}
-          </div>
-          <div>
-            {"Gas Limit: "}
-            {gasLimit}
-            {"₭"}
-          </div>
-        </div>
+        </Modal>
       )}
     </div>
   );
