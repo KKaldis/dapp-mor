@@ -1,4 +1,3 @@
-import React from "react";
 import { useMoralis } from "react-moralis";
 import { useState } from "react";
 import ButtonRGB from "./ui/ButtonRGB";

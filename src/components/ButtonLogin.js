@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import { useMoralis } from "react-moralis";
 import ButtonRGB from "./ui/ButtonRGB";
 import { IoWalletOutline } from "react-icons/io5";
@@ -6,7 +6,7 @@ import { IoWalletOutline } from "react-icons/io5";
 export default function ButtonLogin() {
   const { authenticate, isAuthenticated, logout, user } = useMoralis();
 
-  const [hovered, setHovered] = React.useState(false);
+  const [hovered, setHovered] = useState(false);
 
   return !isAuthenticated ? (
     <ButtonRGB

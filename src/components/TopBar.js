@@ -1,6 +1,6 @@
-import React from "react";
 import ButtonLogin from "./ButtonLogin";
 import { BsCurrencyBitcoin } from "react-icons/bs";
+
 export default function TopBar() {
   return (
     <div
