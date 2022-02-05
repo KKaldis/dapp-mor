@@ -1,7 +1,9 @@
 export default function Login() {
   return (
-    <div className="w-100 p-5 text-center">
-      <h1>WELCOME</h1>
+    <div className="p-5 text-center">
+      <div className="rgbShadow  glassMorphism border-primary border border-2 rounded">
+        <h1 className="neonText rgbShadow rounded m-0">Welcome!</h1>
+      </div>
     </div>
   );
 }

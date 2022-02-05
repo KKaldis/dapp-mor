@@ -22,7 +22,7 @@ const Layout = (props) => {
       <TopBar />
       <CubesBack />
       <div
-        className="d-flex flex-row align-items-center h-100"
+        className="d-flex flex-row align-items-center h-100 justify-content-center"
         style={{ maxHeight: "inherit", boxSizing: "border-box" }}
       >
         {props.children}
