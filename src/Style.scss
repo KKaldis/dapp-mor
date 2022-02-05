@@ -175,8 +175,8 @@
   position: fixed;
   top: 80vh;
   left: 45vw;
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   // background-color: #0040c1;
   // border: solid 1px darken(#0040c1, 8%);
   transform-origin: top left;
@@ -308,7 +308,6 @@
   animation: flicker 1.5s infinite alternate;
 }
 
-
 @keyframes flicker {
   0%,
   19%,
@@ -334,4 +333,8 @@
     text-shadow: none;
     box-shadow: none;
   }
+}
+
+.delay {
+  animation-delay: 0.5;
 }

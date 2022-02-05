@@ -11,7 +11,9 @@ export default function ButtonLogin() {
 
   return !isAuthenticated ? (
     <ButtonRGB
-      className="bg-dark border-primary"
+      className={`bg-dark border-primary ${
+        !hovered ? "rgbShadow neonText" : null
+      }`}
       onClick={() => authenticate({ signingMessage: "QIFSHA" })}
     >
       <IoWalletOutline className="me-3" /> LogIn
