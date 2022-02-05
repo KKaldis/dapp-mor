@@ -1,6 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 
-.button {
+* {
+  user-select: none;
 }
 
 .rgbButton {
@@ -248,13 +249,11 @@
   z-index: 1000 !important;
 }
 
-
 .neonText {
   font-weight: 200;
   font-style: italic;
   color: #fff;
   padding: 1rem 2rem;
-
   animation: flicker 1.5s infinite alternate;
 }
 
