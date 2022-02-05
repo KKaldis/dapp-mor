@@ -26,17 +26,17 @@ export default function ButtonLogin() {
       onMouseLeave={() => setHovered(false)}
       onClick={() => setHovered(false)}
     >
-      <ButtonRGB className="bg-dark border-primary w-100 logout" 
-              // message={` 0x...${user.attributes.ethAddress.slice(-4)}`}
-              // messageHover="Logout"
-              >
+      <ButtonRGB
+        className="bg-dark border-primary w-100 logout"
+        // message={` 0x...${user.attributes.ethAddress.slice(-4)}`}
+        // messageHover="Logout"
+      >
         <IoWalletOutline className="me-3" />{" "}
         {` 0x...${user.attributes.ethAddress.slice(-4)}`}
       </ButtonRGB>
       <ul>
         <li
           className="position-absolute bg-dark rgbButton rounded border-primary logout"
-
           style={{
             zIndex: hovered ? 0 : -1,
             top: hovered ? 60 : 0,

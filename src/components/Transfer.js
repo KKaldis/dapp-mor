@@ -46,8 +46,8 @@ export default function Transfer() {
   // })
 
   return (
-    <div className=" text-center">
-      <div className="p-3 p-sm-3 p-lg-4 p-xxl-5 rounded rgbShadow border border-secondary  glassMorphism">
+    <>
+      <div className="p-3 p-sm-3 p-lg-4 p-xxl-5 rounded rgbShadow border border-secondary  glassMorphism text-center">
         <h2 className="neonText mb-5">Transfer Assets</h2>
         <div>
           <input
@@ -106,6 +106,6 @@ export default function Transfer() {
           </div>
         </Modal>
       )}
-    </div>
+    </>
   );
 }

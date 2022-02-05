@@ -4,6 +4,7 @@ import CubesBack from "./ui/CubesBack";
 import { useMoralis } from "react-moralis";
 import { connect } from "react-redux";
 import Transfer from "./Transfer";
+import Balances from "./Balances";
 
 const Layout = (props) => {
   const { isAuthenticated } = useMoralis();
@@ -12,6 +13,9 @@ const Layout = (props) => {
   switch (props.sideView) {
     case "Transfer":
       view = <Transfer />;
+      break;
+    case "Assets":
+      view = <Balances />;
       break;
     default:
       break;
@@ -22,7 +26,7 @@ const Layout = (props) => {
       <TopBar />
       <CubesBack />
       <div
-        className="d-flex flex-row align-items-center h-100 justify-content-center"
+        className="d-flex flex-row align-items-center h-100 justify-content-center overflow-hidden"
         style={{ maxHeight: "inherit", boxSizing: "border-box" }}
       >
         {props.children}
