@@ -1,10 +1,10 @@
-import { useMoralis } from "react-moralis";
+import { useMoralis, useWeb3Transfer } from "react-moralis";
 import { useState } from "react";
 import ButtonRGB from "./ui/ButtonRGB";
 import Modal from "./ui/Modal";
 
 export default function Transfer() {
-  const { user, Moralis } = useMoralis();
+  const { Moralis } = useMoralis();
   const [from, setFrom] = useState();
   const [to, setTo] = useState();
   const [confirmations, setConfirmations] = useState();
@@ -25,6 +25,7 @@ export default function Transfer() {
       amount: Moralis.Units.ETH(amount),
       receiver: address,
     };
+
     let response = await Moralis.transfer(options);
     setFrom(response.from);
     setTo(response.to);
@@ -37,6 +38,12 @@ export default function Transfer() {
     setData(response);
     setModalToggle(true);
   };
+
+  // const {fetch, error, isFetching} = useWeb3Transfer({
+  //   amount: Moralis.Units.ETH(amount),
+  //   receiver: address,
+  //   type: "native",
+  // })
 
   return (
     <div className=" text-center">
@@ -57,10 +64,7 @@ export default function Transfer() {
             onChange={(e) => setAmount(e.target.value)}
           />
         </div>
-        <ButtonRGB
-          onClick={() => send(amount, address)}
-          className="border-secondary mt-5"
-        >
+        <ButtonRGB onClick={() => send()} className="border-secondary mt-5">
           Send
         </ButtonRGB>
       </div>

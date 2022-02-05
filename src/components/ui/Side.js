@@ -1,7 +1,9 @@
-import ButtonRGB from "./ui/ButtonRGB";
+import ButtonRGB from "./ButtonRGB";
 import { BiSend, BiLockAlt, BiCoin, BiRocket, BiHive } from "react-icons/bi";
+import { connect } from "react-redux";
+import { sideViewChanged } from "../../redux/actions";
 
-export default function Side() {
+const Side = ({ changeView }) => {
   return (
     <div
       className=" text-center p-3 p-sm-3 p-lg-4 p-xxl-5
@@ -9,6 +11,7 @@ export default function Side() {
      glassMorphism justify-content-evenly"
     >
       <ButtonRGB
+        onClick={() => changeView("Upcoming")}
         className="bg-dark border-secondary d-flex
       justify-content-center"
       >
@@ -16,6 +19,7 @@ export default function Side() {
         Upcoming
       </ButtonRGB>
       <ButtonRGB
+        onClick={() => changeView("Stake")}
         className="bg-dark border-secondary d-flex
         justify-content-center"
       >
@@ -23,6 +27,7 @@ export default function Side() {
         Stake
       </ButtonRGB>
       <ButtonRGB
+        onClick={() => changeView("Transfer")}
         className="bg-dark border-secondary d-flex
        justify-content-center"
       >
@@ -30,6 +35,7 @@ export default function Side() {
         Transfer
       </ButtonRGB>
       <ButtonRGB
+        onClick={() => changeView("Assets")}
         className="bg-dark border-secondary d-flex
       justify-content-center"
       >
@@ -37,6 +43,7 @@ export default function Side() {
         Assets
       </ButtonRGB>
       <ButtonRGB
+        onClick={() => changeView("Skordat")}
         className="bg-dark border-secondary d-flex
       justify-content-center"
       >
@@ -45,4 +52,13 @@ export default function Side() {
       </ButtonRGB>
     </div>
   );
-}
+};
+const mapStateToProps = (state) => ({
+  sideView: state.sideView,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  changeView: (view) => dispatch(sideViewChanged(view)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Side);

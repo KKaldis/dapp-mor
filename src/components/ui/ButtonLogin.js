@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useMoralis } from "react-moralis";
-import ButtonRGB from "./ui/ButtonRGB";
+import ButtonRGB from "./ButtonRGB";
 import { IoWalletOutline } from "react-icons/io5";
+import Modal from "./Modal";
 
 export default function ButtonLogin() {
   const { authenticate, isAuthenticated, logout, user } = useMoralis();

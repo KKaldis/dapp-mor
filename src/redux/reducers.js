@@ -1,5 +1,17 @@
-import * as actions from "./actions";
+import * as _actions from "./actions";
 
-const reducer = (state = {}, action) => ({});
+export const sideView = (state = undefined, action) => {
+  switch (action.type) {
+    case _actions.SIDEVIEW_CHANGED:
+      return action.value;
+
+    default:
+      return state;
+  }
+};
+
+const reducer = (state = {}, action) => ({
+  sideView: sideView(state.sideView, action),
+});
 
 export default reducer;
