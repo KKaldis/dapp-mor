@@ -18,17 +18,17 @@ export default function Balances() {
         className="p-3 p-sm-3 p-lg-4 p-xxl-5 rounded rgbShadow border border-secondary  glassMorphism overflow-auto h-100 w-100"
         style={{ maXheight: "100%" }}
       >
-        <h1>ERC 20 Balances</h1>
+        <h2 className="neonText pt-4">ERC 20 Balances</h2>
         <ERC20Balances className="text-break text-wrap" />
-        <h1>ERC 20 Transfers</h1>
+        <h2 className="neonText pt-4">ERC 20 Transfers</h2>
         <ERC20Transfers className="text-break text-wrap" />
-        <h1>Native Coin Balance</h1>
+        <h2 className="neonText pt-4">Native Coin Balance</h2>
         <NativeBalance className="text-break text-wrap" />
-        <h1>Native Coin Transactions</h1>
+        <h className="neonText pt-4">Native Coin Transactions</h>
         <NativeTransactions className="text-break text-wrap" />
-        <h1>NFT Balances</h1>
+        <h2 className="neonText pt-4">NFT Balances</h2>
         <NFTBalances />
-        <h1>NFT Transfers</h1>
+        <h2 className="neonText pt-4">NFT Transfers</h2>
         <NFTTransfers />
       </div>
     </div>
@@ -358,7 +358,8 @@ const NFTBalances = () => {
 
 const NFTTransfers = () => {
   const [shown, setShown] = React.useState(true);
-  const { fetch, data, error, isLoading, isFetching } = useNFTTransfers();
+  const { getNFTTransfers, data, error, isLoading, isFetching } =
+    useNFTTransfers();
 
   return (
     <div>
@@ -366,10 +367,10 @@ const NFTTransfers = () => {
         <ButtonRGB
           className="border border-secondary bg-dark"
           onClick={() =>
-            fetch({
+            getNFTTransfers({
               params: {
                 chain: "bsc",
-                address: "0x1d978755949edeced847aee4b6bc80706c5eab91",
+                address: "0x898A9Eb0f6e49c8f5D33E678dd4bEfDCff77552A",
               },
             })
           }
