@@ -24,7 +24,7 @@ export default function Balances() {
         <ERC20Transfers className="text-break text-wrap" />
         <h2 className="neonText pt-4">Native Coin Balance</h2>
         <NativeBalance className="text-break text-wrap" />
-        <h className="neonText pt-4">Native Coin Transactions</h>
+        <h2 className="neonText pt-4">Native Coin Transactions</h2>
         <NativeTransactions className="text-break text-wrap" />
         <h2 className="neonText pt-4">NFT Balances</h2>
         <NFTBalances />

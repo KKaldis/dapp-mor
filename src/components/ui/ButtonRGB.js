@@ -2,7 +2,7 @@ export default function ButtonRGB(props) {
   return (
     <div
       message={props.message}
-      messageHover={props.messageHover}
+      messagehover={props.messagehover}
       className={`rgbButton shineButton rounded ${props.className} `}
       onClick={props.onClick}
       onMouseEnter={props.onMouseEnter}

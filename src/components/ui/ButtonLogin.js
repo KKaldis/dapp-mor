@@ -29,7 +29,7 @@ export default function ButtonLogin() {
       <ButtonRGB
         className="bg-dark border-primary w-100 logout"
         // message={` 0x...${user.attributes.ethAddress.slice(-4)}`}
-        // messageHover="Logout"
+        // messagehover="Logout"
       >
         <IoWalletOutline className="me-3" />
         {` 0x...${user.attributes.ethAddress.slice(-4)}`}
