@@ -1,3 +1,5 @@
+import Loader from "./ui/Loader";
+
 export default function Login() {
   return (
     <div className="p-5 text-center">

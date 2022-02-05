@@ -8,6 +8,8 @@ import {
 } from "react-moralis";
 import React from "react";
 import ButtonRGB from "./ui/ButtonRGB";
+import Loader from "./ui/Loader";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 export default function Balances() {
   return (
@@ -42,7 +44,7 @@ const ERC20Balances = () => {
     <div>
       <div className="d-flex justify-content-between ">
         <ButtonRGB
-          className="border border-secondary"
+          className="border border-secondary bg-dark"
           onClick={() =>
             fetchERC20Balances({
               params: {
@@ -58,16 +60,36 @@ const ERC20Balances = () => {
           className="border border-secondary"
           onClick={() => setShown(!shown)}
         >
-          {shown ? "Hide" : "Show"}
+          {shown ? (
+            <>
+              Hide
+              <AiFillEyeInvisible className="ms-3" />{" "}
+            </>
+          ) : (
+            <>
+              Show
+              <AiFillEye className="ms-3" />{" "}
+            </>
+          )}
         </ButtonRGB>
       </div>
       {error && <>{JSON.stringify(error)}</>}
-      <pre className="p-4 border border-secodnary rounded shadow bg-dark">
-        {shown
-          ? isFetching
-            ? "fetching"
-            : JSON.stringify(data, null, 2)
-          : "Hidden"}
+      <pre
+        className="p-4 border border-secondary rounded shadow bg-dark"
+        style={{ maxHeight: "50vh" }}
+      >
+        {shown ? (
+          isFetching ? (
+            <Loader />
+          ) : (
+            JSON.stringify(data, null, 2)
+          )
+        ) : (
+          <h2 className="m-0 p-5 d-flex flex-column justify-content-center align-items-center">
+            <AiFillEyeInvisible />
+            Hidden
+          </h2>
+        )}
       </pre>
       {console.log("ERC20Balances: ", data)}
     </div>
@@ -83,7 +105,7 @@ const ERC20Transfers = () => {
     <div>
       <div className="d-flex justify-content-between ">
         <ButtonRGB
-          className="border border-secondary"
+          className="border border-secondary bg-dark"
           onClick={() =>
             fetchERC20Transfers({
               params: {
@@ -99,16 +121,36 @@ const ERC20Transfers = () => {
           className="border border-secondary"
           onClick={() => setShown(!shown)}
         >
-          {shown ? "Hide" : "Show"}
+          {shown ? (
+            <>
+              Hide
+              <AiFillEyeInvisible className="ms-3" />{" "}
+            </>
+          ) : (
+            <>
+              Show
+              <AiFillEye className="ms-3" />{" "}
+            </>
+          )}
         </ButtonRGB>
       </div>
       {error && <>{JSON.stringify(error)}</>}
-      <pre className="p-4 border border-secodnary rounded shadow bg-dark">
-        {shown
-          ? isFetching
-            ? "fetching"
-            : JSON.stringify(data, null, 2)
-          : "Hidden"}
+      <pre
+        className="p-4 border border-secondary rounded shadow bg-dark"
+        style={{ maxHeight: "50vh" }}
+      >
+        {shown ? (
+          isFetching ? (
+            <Loader />
+          ) : (
+            JSON.stringify(data, null, 2)
+          )
+        ) : (
+          <h2 className="m-0 p-5 d-flex flex-column justify-content-center align-items-center">
+            <AiFillEyeInvisible />
+            Hidden
+          </h2>
+        )}
       </pre>
       {console.log("ERC20Transfers: ", data)}
     </div>
@@ -130,6 +172,7 @@ function NativeBalance() {
     <div>
       <div className="d-flex justify-content-between ">
         <ButtonRGB
+          className="border border-secondary bg-dark"
           onClick={() =>
             getBalances({
               params: {
@@ -145,14 +188,27 @@ function NativeBalance() {
           className="border border-secondary"
           onClick={() => setShown(!shown)}
         >
-          {shown ? "Hide" : "Show"}
+          {shown ? (
+            <>
+              Hide
+              <AiFillEyeInvisible className="ms-3" />{" "}
+            </>
+          ) : (
+            <>
+              Show
+              <AiFillEye className="ms-3" />{" "}
+            </>
+          )}
         </ButtonRGB>
       </div>
       {error && <>{JSON.stringify(error)}</>}
-      <pre className="p-4 border border-secodnary rounded shadow bg-dark">
+      <pre
+        className="p-4 border border-secondary rounded shadow bg-dark"
+        style={{ maxHeight: "50vh" }}
+      >
         {shown ? (
           isFetching ? (
-            "fetching"
+            <Loader />
           ) : (
             <>
               {" "}
@@ -161,7 +217,10 @@ function NativeBalance() {
             </>
           )
         ) : (
-          "Hidden"
+          <h2 className="m-0 p-5 d-flex flex-column justify-content-center align-items-center">
+            <AiFillEyeInvisible />
+            Hidden
+          </h2>
         )}
       </pre>
       {console.log("Balance: ", balance)}
@@ -184,6 +243,7 @@ const NativeTransactions = () => {
     <div>
       <div className="d-flex justify-content-between ">
         <ButtonRGB
+          className="border border-secondary bg-dark"
           onClick={() =>
             getNativeTransations({
               params: {
@@ -199,16 +259,36 @@ const NativeTransactions = () => {
           className="border border-secondary"
           onClick={() => setShown(!shown)}
         >
-          {shown ? "Hide" : "Show"}
+          {shown ? (
+            <>
+              Hide
+              <AiFillEyeInvisible className="ms-3" />{" "}
+            </>
+          ) : (
+            <>
+              Show
+              <AiFillEye className="ms-3" />{" "}
+            </>
+          )}
         </ButtonRGB>
       </div>
       {error && <>{JSON.stringify(error)}</>}
-      <pre className="p-4 border border-secodnary rounded shadow bg-dark">
-        {shown
-          ? isFetching
-            ? "fetching"
-            : JSON.stringify(data, null, 2)
-          : "Hidden"}
+      <pre
+        className="p-4 border border-secondary rounded shadow bg-dark"
+        style={{ maxHeight: "50vh" }}
+      >
+        {shown ? (
+          isFetching ? (
+            <Loader />
+          ) : (
+            JSON.stringify(data, null, 2)
+          )
+        ) : (
+          <h2 className="m-0 p-5 d-flex flex-column justify-content-center align-items-center">
+            <AiFillEyeInvisible />
+            Hidden
+          </h2>
+        )}
       </pre>
       {console.log("NativeTransactions :", data)}
     </div>
@@ -224,6 +304,7 @@ const NFTBalances = () => {
     <div>
       <div className="d-flex justify-content-between ">
         <ButtonRGB
+          className="border border-secondary bg-dark"
           onClick={() =>
             getNFTBalances({
               params: {
@@ -239,16 +320,36 @@ const NFTBalances = () => {
           className="border border-secondary"
           onClick={() => setShown(!shown)}
         >
-          {shown ? "Hide" : "Show"}
+          {shown ? (
+            <>
+              Hide
+              <AiFillEyeInvisible className="ms-3" />{" "}
+            </>
+          ) : (
+            <>
+              Show
+              <AiFillEye className="ms-3" />{" "}
+            </>
+          )}
         </ButtonRGB>
       </div>
       {error && <>{JSON.stringify(error)}</>}
-      <pre className="p-4 border border-secodnary rounded shadow bg-dark">
-        {shown
-          ? isFetching
-            ? "fetching"
-            : JSON.stringify(data, null, 2)
-          : "Hidden"}{" "}
+      <pre
+        className="p-4 border border-secondary rounded shadow bg-dark"
+        style={{ maxHeight: "50vh" }}
+      >
+        {shown ? (
+          isFetching ? (
+            <Loader />
+          ) : (
+            JSON.stringify(data, null, 2)
+          )
+        ) : (
+          <h2 className="m-0 p-5 d-flex flex-column justify-content-center align-items-center">
+            <AiFillEyeInvisible />
+            Hidden
+          </h2>
+        )}{" "}
         {console.log("NFTBalances: ", data)}
       </pre>
     </div>
@@ -263,6 +364,7 @@ const NFTTransfers = () => {
     <div>
       <div className="d-flex justify-content-between ">
         <ButtonRGB
+          className="border border-secondary bg-dark"
           onClick={() =>
             fetch({
               params: {
@@ -278,16 +380,36 @@ const NFTTransfers = () => {
           className="border border-secondary"
           onClick={() => setShown(!shown)}
         >
-          {shown ? "Hide" : "Show"}
+          {shown ? (
+            <>
+              Hide
+              <AiFillEyeInvisible className="ms-3" />{" "}
+            </>
+          ) : (
+            <>
+              Show
+              <AiFillEye className="ms-3" />{" "}
+            </>
+          )}
         </ButtonRGB>
       </div>
       {error && <>{JSON.stringify(error)}</>}
-      <pre className="p-4 border border-secodnary rounded shadow bg-dark">
-        {shown
-          ? isFetching
-            ? "fetching"
-            : JSON.stringify(data, null, 2)
-          : "Hidden"}
+      <pre
+        className="p-4 border border-secondary rounded shadow bg-dark"
+        style={{ maxHeight: "50vh" }}
+      >
+        {shown ? (
+          isFetching ? (
+            <Loader />
+          ) : (
+            JSON.stringify(data, null, 2)
+          )
+        ) : (
+          <h2 className="m-0 p-5 d-flex flex-column justify-content-center align-items-center">
+            <AiFillEyeInvisible />
+            Hidden
+          </h2>
+        )}
       </pre>
       {/* <img src={data} */}
       {console.log("NFTTransfers: ", data)}
