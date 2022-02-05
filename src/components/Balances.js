@@ -7,6 +7,7 @@ import {
   useNFTTransfers,
 } from "react-moralis";
 import React from "react";
+import ButtonRGB from "./ui/ButtonRGB";
 
 export default function Balances() {
   return (
@@ -15,17 +16,17 @@ export default function Balances() {
         className="p-3 p-sm-3 p-lg-4 p-xxl-5 rounded rgbShadow border border-secondary  glassMorphism overflow-auto h-100 w-100"
         style={{ maXheight: "100%" }}
       >
-        <h5>ERC 20 Balances</h5>
+        <h1>ERC 20 Balances</h1>
         <ERC20Balances className="text-break text-wrap" />
-        <h5>ERC 20 Transfers</h5>
+        <h1>ERC 20 Transfers</h1>
         <ERC20Transfers className="text-break text-wrap" />
-        <h5>Native Coin Balance</h5>
+        <h1>Native Coin Balance</h1>
         <NativeBalance className="text-break text-wrap" />
-        <h5>Native Coin Transactions</h5>
+        <h1>Native Coin Transactions</h1>
         <NativeTransactions className="text-break text-wrap" />
-        <h5>NFT Balances</h5>
+        <h1>NFT Balances</h1>
         <NFTBalances />
-        <h5>NFT Transfers</h5>
+        <h1>NFT Transfers</h1>
         <NFTTransfers />
       </div>
     </div>
@@ -33,56 +34,89 @@ export default function Balances() {
 }
 
 const ERC20Balances = () => {
+  const [shown, setShown] = React.useState(true);
   const { fetchERC20Balances, data, isLoading, isFetching, error } =
     useERC20Balances();
 
   return (
     <div>
+      <div className="d-flex justify-content-between ">
+        <ButtonRGB
+          className="border border-secondary"
+          onClick={() =>
+            fetchERC20Balances({
+              params: {
+                chain: "bsc",
+                address: "0x898A9Eb0f6e49c8f5D33E678dd4bEfDCff77552A",
+              },
+            })
+          }
+        >
+          Refetch ERC20Balances
+        </ButtonRGB>
+        <ButtonRGB
+          className="border border-secondary"
+          onClick={() => setShown(!shown)}
+        >
+          {shown ? "Hide" : "Show"}
+        </ButtonRGB>
+      </div>
       {error && <>{JSON.stringify(error)}</>}
-      <button
-        onClick={() =>
-          fetchERC20Balances({
-            params: {
-              chain: "bsc",
-              address: "0x898A9Eb0f6e49c8f5D33E678dd4bEfDCff77552A",
-            },
-          })
-        }
-      >
-        Refetch ERC20Balances
-      </button>
+      <pre className="p-4 border border-secodnary rounded shadow bg-dark">
+        {shown
+          ? isFetching
+            ? "fetching"
+            : JSON.stringify(data, null, 2)
+          : "Hidden"}
+      </pre>
       {console.log("ERC20Balances: ", data)}
-      <pre>{isFetching ? "fetching" : JSON.stringify(data, null, 2)}</pre>
     </div>
   );
 };
 
 const ERC20Transfers = () => {
+  const [shown, setShown] = React.useState(true);
   const { fetchERC20Transfers, data, error, isLoading, isFetching } =
     useERC20Transfers();
 
   return (
     <div>
+      <div className="d-flex justify-content-between ">
+        <ButtonRGB
+          className="border border-secondary"
+          onClick={() =>
+            fetchERC20Transfers({
+              params: {
+                chain: "bsc",
+                address: "0x898A9Eb0f6e49c8f5D33E678dd4bEfDCff77552A",
+              },
+            })
+          }
+        >
+          Refetch ERC20Transfers
+        </ButtonRGB>
+        <ButtonRGB
+          className="border border-secondary"
+          onClick={() => setShown(!shown)}
+        >
+          {shown ? "Hide" : "Show"}
+        </ButtonRGB>
+      </div>
       {error && <>{JSON.stringify(error)}</>}
-      <button
-        onClick={() =>
-          fetchERC20Transfers({
-            params: {
-              chain: "bsc",
-              address: "0x898A9Eb0f6e49c8f5D33E678dd4bEfDCff77552A",
-            },
-          })
-        }
-      >
-        Refetch ERC20Transfers
-      </button>
+      <pre className="p-4 border border-secodnary rounded shadow bg-dark">
+        {shown
+          ? isFetching
+            ? "fetching"
+            : JSON.stringify(data, null, 2)
+          : "Hidden"}
+      </pre>
       {console.log("ERC20Transfers: ", data)}
-      <pre>{isFetching ? "fetching" : JSON.stringify(data, null, 2)}</pre>
     </div>
   );
 };
 
 function NativeBalance() {
+  const [shown, setShown] = React.useState(true);
   const {
     getBalances,
     data: balance,
@@ -94,29 +128,50 @@ function NativeBalance() {
 
   return (
     <div>
+      <div className="d-flex justify-content-between ">
+        <ButtonRGB
+          onClick={() =>
+            getBalances({
+              params: {
+                chain: "0x3",
+                address: "0x0b60536035C4cE972190bE356003742F1e054557",
+              },
+            })
+          }
+        >
+          Refetch NativeBalance
+        </ButtonRGB>
+        <ButtonRGB
+          className="border border-secondary"
+          onClick={() => setShown(!shown)}
+        >
+          {shown ? "Hide" : "Show"}
+        </ButtonRGB>
+      </div>
       {error && <>{JSON.stringify(error)}</>}
-      <button
-        onClick={() =>
-          getBalances({
-            params: {
-              chain: "0x3",
-              address: "0x0b60536035C4cE972190bE356003742F1e054557",
-            },
-          })
-        }
-      >
-        Refetch NativeBalance
-      </button>
-      <pre>{isFetching ? "fetching" : JSON.stringify(balance, null, 2)}</pre>
-      <pre>
-        {isFetching ? "fetching" : JSON.stringify(nativeToken, null, 2)}
+      <pre className="p-4 border border-secodnary rounded shadow bg-dark">
+        {shown ? (
+          isFetching ? (
+            "fetching"
+          ) : (
+            <>
+              {" "}
+              {JSON.stringify(balance, null, 2)}
+              {JSON.stringify(nativeToken, null, 2)}{" "}
+            </>
+          )
+        ) : (
+          "Hidden"
+        )}
       </pre>
+      {console.log("Balance: ", balance)}
       {console.log("NativeBalance: ", nativeToken)}
     </div>
   );
 }
 
 const NativeTransactions = () => {
+  const [shown, setShown] = React.useState(true);
   const { getNativeTransations, data, chainId, error, isLoading, isFetching } =
     useNativeTransactions({
       params: {
@@ -127,69 +182,114 @@ const NativeTransactions = () => {
 
   return (
     <div>
+      <div className="d-flex justify-content-between ">
+        <ButtonRGB
+          onClick={() =>
+            getNativeTransations({
+              params: {
+                chain: "bsc",
+                address: "0x898A9Eb0f6e49c8f5D33E678dd4bEfDCff77552A",
+              },
+            })
+          }
+        >
+          Refetch NativeTransactions
+        </ButtonRGB>
+        <ButtonRGB
+          className="border border-secondary"
+          onClick={() => setShown(!shown)}
+        >
+          {shown ? "Hide" : "Show"}
+        </ButtonRGB>
+      </div>
       {error && <>{JSON.stringify(error)}</>}
-      <button
-        onClick={() =>
-          getNativeTransations({
-            params: {
-              chain: "bsc",
-              address: "0x898A9Eb0f6e49c8f5D33E678dd4bEfDCff77552A",
-            },
-          })
-        }
-      >
-        Refetch NativeTransactions
-      </button>
-      <pre>{isFetching ? "fetching" : JSON.stringify(data, null, 2)}</pre>
+      <pre className="p-4 border border-secodnary rounded shadow bg-dark">
+        {shown
+          ? isFetching
+            ? "fetching"
+            : JSON.stringify(data, null, 2)
+          : "Hidden"}
+      </pre>
       {console.log("NativeTransactions :", data)}
     </div>
   );
 };
 
 const NFTBalances = () => {
+  const [shown, setShown] = React.useState(true);
   const { getNFTBalances, data, error, isLoading, isFetching } =
     useNFTBalances();
 
   return (
     <div>
+      <div className="d-flex justify-content-between ">
+        <ButtonRGB
+          onClick={() =>
+            getNFTBalances({
+              params: {
+                chain: "bsc",
+                address: "0x898A9Eb0f6e49c8f5D33E678dd4bEfDCff77552A",
+              },
+            })
+          }
+        >
+          Refetch NFTBalances
+        </ButtonRGB>
+        <ButtonRGB
+          className="border border-secondary"
+          onClick={() => setShown(!shown)}
+        >
+          {shown ? "Hide" : "Show"}
+        </ButtonRGB>
+      </div>
       {error && <>{JSON.stringify(error)}</>}
-      <button
-        onClick={() =>
-          getNFTBalances({
-            params: {
-              chain: "bsc",
-              address: "0x898A9Eb0f6e49c8f5D33E678dd4bEfDCff77552A",
-            },
-          })
-        }
-      >
-        Refetch NFTBalances
-      </button>
-      <pre>{isFetching ? "fetching" : JSON.stringify(data, null, 2)}</pre>
-      {console.log("NFTBalances: ", data)}
+      <pre className="p-4 border border-secodnary rounded shadow bg-dark">
+        {shown
+          ? isFetching
+            ? "fetching"
+            : JSON.stringify(data, null, 2)
+          : "Hidden"}{" "}
+        {console.log("NFTBalances: ", data)}
+      </pre>
     </div>
   );
 };
 
 const NFTTransfers = () => {
+  const [shown, setShown] = React.useState(true);
   const { fetch, data, error, isLoading, isFetching } = useNFTTransfers();
 
   return (
     <div>
+      <div className="d-flex justify-content-between ">
+        <ButtonRGB
+          onClick={() =>
+            fetch({
+              params: {
+                chain: "bsc",
+                address: "0x1d978755949edeced847aee4b6bc80706c5eab91",
+              },
+            })
+          }
+        >
+          Refetch NFTTransfers
+        </ButtonRGB>
+        <ButtonRGB
+          className="border border-secondary"
+          onClick={() => setShown(!shown)}
+        >
+          {shown ? "Hide" : "Show"}
+        </ButtonRGB>
+      </div>
       {error && <>{JSON.stringify(error)}</>}
-      <button
-        onClick={() =>
-          fetch({
-            params: {
-              chain: "bsc",
-              address: "0x1d978755949edeced847aee4b6bc80706c5eab91",
-            },
-          })
-        }
-      >
-        Refetch NFTTransfers
-      </button>
-      <pre>{isFetching ? "fetching" : JSON.stringify(data, null, 2)}</pre>
+      <pre className="p-4 border border-secodnary rounded shadow bg-dark">
+        {shown
+          ? isFetching
+            ? "fetching"
+            : JSON.stringify(data, null, 2)
+          : "Hidden"}
+      </pre>
+      {/* <img src={data} */}
       {console.log("NFTTransfers: ", data)}
     </div>
   );

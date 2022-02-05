@@ -31,7 +31,7 @@ export default function ButtonLogin() {
         // message={` 0x...${user.attributes.ethAddress.slice(-4)}`}
         // messageHover="Logout"
       >
-        <IoWalletOutline className="me-3" />{" "}
+        <IoWalletOutline className="me-3" />
         {` 0x...${user.attributes.ethAddress.slice(-4)}`}
       </ButtonRGB>
       <ul>

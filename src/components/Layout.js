@@ -33,7 +33,7 @@ const Layout = (props) => {
         {isAuthenticated && (
           <>
             <Side />
-            <div className="w-100 h-100 d-flex align-items-center justify-content-center flex-column">
+            <div className="w-100 h-100 d-flex align-items-center justify-content-center flex-column overflow-auto">
               {view}
             </div>
           </>

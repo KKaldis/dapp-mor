@@ -2,12 +2,13 @@
 
 // * {
 //   user-select: none;
+// // word-break: break-word;
 // }
 
 .rgbButton {
   z-index: 2;
   min-height: 60px;
-  // min-width: 180px;
+  // min-width: 160px;
   display: inline-block;
   padding: 1rem 2rem;
   color: #e3eeffdd;
@@ -119,6 +120,7 @@
     box-shadow: 0px 0px 25px #0060fc88, 0px 0px 125px #0061fc44;
   }
 }
+
 .shineButton:before {
   content: "";
   position: absolute;
@@ -138,6 +140,7 @@
 .shineButton:hover:before {
   left: -100%;
 }
+
 .rgbShadow {
   animation: hueRotation 4s linear infinite;
   box-shadow: 0px 0px 25px #0060fc88, 0px 0px 125px #0061fc44;
