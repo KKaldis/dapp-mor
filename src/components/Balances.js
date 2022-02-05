@@ -11,7 +11,7 @@ import ButtonRGB from "./ui/ButtonRGB";
 
 export default function Balances() {
   return (
-    <div className="text-light d-flex h-100 w-100 align-items-center p-5 justify-content-center">
+    <div className="text-light d-flex h-100 w-100 align-items-center justify-content-center p-3 p-sm-3 p-lg-4 p-xxl-5">
       <div
         className="p-3 p-sm-3 p-lg-4 p-xxl-5 rounded rgbShadow border border-secondary  glassMorphism overflow-auto h-100 w-100"
         style={{ maXheight: "100%" }}
