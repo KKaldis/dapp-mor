@@ -75,7 +75,7 @@ const ERC20Balances = () => {
       </div>
       {error && <>{JSON.stringify(error)}</>}
       <pre
-        className="p-4 border border-secondary rounded shadow bg-dark"
+        className="p-4 border border-secondary rounded bg-dark insetShadow"
         style={{ maxHeight: "50vh" }}
       >
         {shown ? (
@@ -136,7 +136,7 @@ const ERC20Transfers = () => {
       </div>
       {error && <>{JSON.stringify(error)}</>}
       <pre
-        className="p-4 border border-secondary rounded shadow bg-dark"
+        className="p-4 border border-secondary rounded bg-dark insetShadow"
         style={{ maxHeight: "50vh" }}
       >
         {shown ? (
@@ -203,7 +203,7 @@ function NativeBalance() {
       </div>
       {error && <>{JSON.stringify(error)}</>}
       <pre
-        className="p-4 border border-secondary rounded shadow bg-dark"
+        className="p-4 border border-secondary rounded bg-dark insetShadow"
         style={{ maxHeight: "50vh" }}
       >
         {shown ? (
@@ -273,7 +273,7 @@ const NativeTransactions = () => {
       </div>
       {error && <>{JSON.stringify(error)}</>}
       <pre
-        className="p-4 border border-secondary rounded shadow bg-dark"
+        className="p-4 border border-secondary rounded bg-dark insetShadow"
         style={{ maxHeight: "50vh" }}
       >
         {shown ? (
@@ -334,7 +334,7 @@ const NFTBalances = () => {
       </div>
       {error && <>{JSON.stringify(error)}</>}
       <pre
-        className="p-4 border border-secondary rounded shadow bg-dark"
+        className="p-4 border border-secondary rounded bg-dark insetShadow"
         style={{ maxHeight: "50vh" }}
       >
         {shown ? (
@@ -395,7 +395,7 @@ const NFTTransfers = () => {
       </div>
       {error && <>{JSON.stringify(error)}</>}
       <pre
-        className="p-4 border border-secondary rounded shadow bg-dark"
+        className="p-4 border border-secondary rounded bg-dark insetShadow"
         style={{ maxHeight: "50vh" }}
       >
         {shown ? (
