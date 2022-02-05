@@ -9,14 +9,12 @@
   // background-color: var(--bs-secondary);
   width: 1em;
   box-shadow: 0rem 0rem 1rem var(--bs-primary);
-
 }
 
 *::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0rem 0rem 1rem var(--bs-secondary);
   box-shadow: inset 0rem 0rem 1rem var(--bs-secondary);
 }
-
 
 *::-webkit-scrollbar-thumb {
   border-radius: 3px;
