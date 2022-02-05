@@ -85,7 +85,7 @@ const ERC20Balances = () => {
             JSON.stringify(data, null, 2)
           )
         ) : (
-          <h2 className="m-0 p-5 d-flex flex-column justify-content-center align-items-center">
+          <h2 className="m-0 p-5 d-flex flex-column justify-content-center align-items-center text-secondary">
             <AiFillEyeInvisible />
             Hidden
           </h2>
@@ -146,7 +146,7 @@ const ERC20Transfers = () => {
             JSON.stringify(data, null, 2)
           )
         ) : (
-          <h2 className="m-0 p-5 d-flex flex-column justify-content-center align-items-center">
+          <h2 className="m-0 p-5 d-flex flex-column justify-content-center align-items-center text-secondary">
             <AiFillEyeInvisible />
             Hidden
           </h2>
@@ -217,7 +217,7 @@ function NativeBalance() {
             </>
           )
         ) : (
-          <h2 className="m-0 p-5 d-flex flex-column justify-content-center align-items-center">
+          <h2 className="m-0 p-5 d-flex flex-column justify-content-center align-items-center text-secondary">
             <AiFillEyeInvisible />
             Hidden
           </h2>
@@ -284,7 +284,7 @@ const NativeTransactions = () => {
             JSON.stringify(data, null, 2)
           )
         ) : (
-          <h2 className="m-0 p-5 d-flex flex-column justify-content-center align-items-center">
+          <h2 className="m-0 p-5 d-flex flex-column justify-content-center align-items-center text-secondary">
             <AiFillEyeInvisible />
             Hidden
           </h2>
@@ -345,7 +345,7 @@ const NFTBalances = () => {
             JSON.stringify(data, null, 2)
           )
         ) : (
-          <h2 className="m-0 p-5 d-flex flex-column justify-content-center align-items-center">
+          <h2 className="m-0 p-5 d-flex flex-column justify-content-center align-items-center text-secondary">
             <AiFillEyeInvisible />
             Hidden
           </h2>
@@ -405,7 +405,7 @@ const NFTTransfers = () => {
             JSON.stringify(data, null, 2)
           )
         ) : (
-          <h2 className="m-0 p-5 d-flex flex-column justify-content-center align-items-center">
+          <h2 className="m-0 p-5 d-flex flex-column justify-content-center align-items-center text-secondary">
             <AiFillEyeInvisible />
             Hidden
           </h2>
