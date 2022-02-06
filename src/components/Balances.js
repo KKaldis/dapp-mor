@@ -45,14 +45,15 @@ const ERC20Balances = () => {
       <div className="d-flex justify-content-between ">
         <ButtonRGB
           className="border border-secondary bg-dark"
-          onClick={() =>
+          onClick={() => {
+            setShown(true);
             fetchERC20Balances({
               params: {
                 chain: "bsc",
                 address: "0x898A9Eb0f6e49c8f5D33E678dd4bEfDCff77552A",
               },
-            })
-          }
+            });
+          }}
         >
           Refetch ERC20Balances
         </ButtonRGB>
@@ -106,14 +107,15 @@ const ERC20Transfers = () => {
       <div className="d-flex justify-content-between ">
         <ButtonRGB
           className="border border-secondary bg-dark"
-          onClick={() =>
+          onClick={() => {
+            setShown(true);
             fetchERC20Transfers({
               params: {
                 chain: "bsc",
                 address: "0x898A9Eb0f6e49c8f5D33E678dd4bEfDCff77552A",
               },
-            })
-          }
+            });
+          }}
         >
           Refetch ERC20Transfers
         </ButtonRGB>
@@ -173,14 +175,15 @@ function NativeBalance() {
       <div className="d-flex justify-content-between ">
         <ButtonRGB
           className="border border-secondary bg-dark"
-          onClick={() =>
+          onClick={() => {
+            setShown(true);
             getBalances({
               params: {
                 chain: "0x3",
                 address: "0x0b60536035C4cE972190bE356003742F1e054557",
               },
-            })
-          }
+            });
+          }}
         >
           Refetch NativeBalance
         </ButtonRGB>
@@ -243,14 +246,15 @@ const NativeTransactions = () => {
       <div className="d-flex justify-content-between ">
         <ButtonRGB
           className="border border-secondary bg-dark"
-          onClick={() =>
+          onClick={() => {
+            setShown(true);
             getNativeTransations({
               params: {
                 chain: "bsc",
                 address: "0x898A9Eb0f6e49c8f5D33E678dd4bEfDCff77552A",
               },
-            })
-          }
+            });
+          }}
         >
           Refetch NativeTransactions
         </ButtonRGB>
@@ -304,14 +308,15 @@ const NFTBalances = () => {
       <div className="d-flex justify-content-between ">
         <ButtonRGB
           className="border border-secondary bg-dark"
-          onClick={() =>
+          onClick={() => {
+            setShown(true);
             getNFTBalances({
               params: {
                 chain: "bsc",
                 address: "0x898A9Eb0f6e49c8f5D33E678dd4bEfDCff77552A",
               },
-            })
-          }
+            });
+          }}
         >
           Refetch NFTBalances
         </ButtonRGB>
@@ -365,14 +370,15 @@ const NFTTransfers = () => {
       <div className="d-flex justify-content-between ">
         <ButtonRGB
           className="border border-secondary bg-dark"
-          onClick={() =>
+          onClick={() => {
+            setShown(true);
             getNFTTransfers({
               params: {
                 chain: "bsc",
                 address: "0x898A9Eb0f6e49c8f5D33E678dd4bEfDCff77552A",
               },
-            })
-          }
+            });
+          }}
         >
           Refetch NFTTransfers
         </ButtonRGB>
