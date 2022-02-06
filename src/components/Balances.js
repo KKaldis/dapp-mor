@@ -16,7 +16,7 @@ export default function Balances() {
     <div className="text-light d-flex h-100 w-100 align-items-center justify-content-center p-3 p-sm-3 p-lg-4 p-xxl-5">
       <div
         className="p-3 p-sm-3 p-lg-4 p-xxl-5 rounded border border-secondary rgbShadow glassMorphism overflow-auto h-100 w-100"
-        style={{ maXheight: "100%", overflowX:"hidden !important" }}
+        style={{ maXheight: "100%", overflowX: "hidden !important" }}
       >
         <h2 className="neonText pt-4">ERC 20 Balances</h2>
         <ERC20Balances className="text-break text-wrap" />
