@@ -1,7 +1,7 @@
 import React from "react";
 import { useNativeTransactions } from "react-moralis";
-import RGBButton from "./ui/RGBButton";
-import Loader from "./ui/Loader";
+import RGBButton from "../ui/RGBButton";
+import Loader from "../ui/Loader";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 export default function NativeTransactions() {

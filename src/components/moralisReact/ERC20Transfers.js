@@ -1,13 +1,22 @@
 import React from "react";
 import { useERC20Transfers } from "react-moralis";
-import RGBButton from "./ui/RGBButton";
-import Loader from "./ui/Loader";
+import RGBButton from "../ui/RGBButton";
+import Loader from "../ui/Loader";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 export default function ERC20Transfers() {
   const [shown, setShown] = React.useState(true);
   const { fetchERC20Transfers, data, error, isLoading, isFetching } =
     useERC20Transfers();
+
+  React.useEffect(() => {
+    fetchERC20Transfers({
+      params: {
+        chain: "bsc",
+        address: "0x898A9Eb0f6e49c8f5D33E678dd4bEfDCff77552A",
+      },
+    });
+  }, []);
 
   return (
     <div>
