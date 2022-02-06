@@ -31,6 +31,7 @@ export default function ERC20Balances() {
                 address: "0x898A9Eb0f6e49c8f5D33E678dd4bEfDCff77552A",
               },
             });
+            console.log(data);
           }}
         >
           Refetch ERC20Balances
@@ -62,7 +63,22 @@ export default function ERC20Balances() {
           isFetching ? (
             <Loader />
           ) : (
-            JSON.stringify(data, null, 2)
+            data &&
+            data.map((asset, i) => (
+              <div key={i} className="border border-secondary p-3 rounded m-3">
+                <div>Token Name: {asset.name}</div>
+                <div>Token Symbol: {asset.symbol}</div>
+                <div>Token Address: {asset.token_address}</div>
+                <div>
+                  {"Token Formated Balance: "}
+                  {parseInt(asset.balance) /
+                    10 ** parseInt(asset.decimals)}{" "}
+                  {(" ", asset.symbol)}
+                </div>
+                <div>Token Raw Balance: {asset.balance}</div>
+                <div>Token Decimals: {asset.decimals}</div>
+              </div>
+            ))
           )
         ) : (
           <h2 className="m-0 p-3 d-flex flex-column justify-content-center align-items-center text-secondary">
