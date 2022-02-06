@@ -5,6 +5,7 @@ import { useMoralis } from "react-moralis";
 import { connect } from "react-redux";
 import Transfer from "./Transfer";
 import Balances from "./Balances";
+import Skordat from "./Skordat";
 
 const Layout = (props) => {
   const { isAuthenticated } = useMoralis();
@@ -18,6 +19,7 @@ const Layout = (props) => {
       view = <Balances />;
       break;
     default:
+      view = <Skordat />;
       break;
   }
 
