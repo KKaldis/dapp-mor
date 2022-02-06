@@ -358,3 +358,114 @@
 .insetShadow {
   box-shadow: inset 0 0 4rem #00000088;
 }
+
+.rgbBorder {
+  // z-index: 2;
+  // min-height: 60px;
+  // min-width: 160px;
+  // display: inline-block;
+  // padding: 1rem 2rem;
+  // color: #e3eeffdd;
+  // cursor: pointer;
+  // text-decoration: none;
+  // text-transform: uppercase;
+  overflow: hidden;
+  filter: hue-rotate(0deg);
+  // box-shadow: 0px 0px 50px #3a86ff22;
+  transition: all 0.1s linear;
+  // border: 1px #ffffff23 solid;
+  // align-items: center;
+
+  text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 20px #82bedc, 0 0 30px #82bedc,
+    0 0 40px #82bedc, 0 0 50px #82bedc, 0 0 60px #82bedc;
+  // border: 1px #ffffff00 solid;
+
+  borderspan {
+    position: absolute;
+    display: block;
+
+    &:nth-child(1) {
+      filter: hue-rotate(0deg);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #3a86ff);
+      animation: animate1 4s linear infinite;
+    }
+    @keyframes animate1 {
+      0% {
+        left: -100%;
+      }
+      50%,
+      100% {
+        left: 100%;
+      }
+    }
+
+    &:nth-child(2) {
+      filter: hue-rotate(60deg);
+      top: -100%;
+      right: 0;
+      width: 1px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, #3a86ff);
+      animation: animate2 4s linear infinite;
+      animation-delay: 1s;
+    }
+
+    @keyframes animate2 {
+      0% {
+        top: -100%;
+      }
+      50%,
+      100% {
+        top: 100%;
+      }
+    }
+    &:nth-child(3) {
+      filter: hue-rotate(120deg);
+      bottom: 0;
+      right: 0;
+      width: 100%;
+
+      background: linear-gradient(270deg, transparent, #3a86ff);
+      animation: animate3 4s linear infinite;
+      animation-delay: 2s;
+      box-shadow: 0px 0px 10px #3a86ff;
+    }
+    @keyframes animate3 {
+      0% {
+        right: -100%;
+        height: 1px;
+      }
+      50%,
+      100% {
+        height: 1px;
+        right: 100%;
+      }
+    }
+
+    &:nth-child(4) {
+      filter: hue-rotate(300deg);
+      bottom: -100%;
+      left: 0;
+      width: 1px;
+      height: 100%;
+      background: linear-gradient(360deg, transparent, #3a86ff);
+      animation: animate4 4s linear infinite;
+      animation-delay: 3s;
+    }
+    @keyframes animate4 {
+      0% {
+        bottom: -100%;
+      }
+      50%,
+      100% {
+        bottom: 100%;
+      }
+    }
+  }
+
+  animation: hueRotation 4s linear infinite;
+}

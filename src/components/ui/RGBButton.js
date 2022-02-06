@@ -1,4 +1,4 @@
-export default function ButtonRGB(props) {
+export default function RGBButton(props) {
   return (
     <div
       message={props.message}

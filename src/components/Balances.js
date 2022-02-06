@@ -7,7 +7,7 @@ import {
   useNFTTransfers,
 } from "react-moralis";
 import React from "react";
-import ButtonRGB from "./ui/ButtonRGB";
+import RGBButton from "./ui/RGBButton";
 import Loader from "./ui/Loader";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
@@ -15,8 +15,8 @@ export default function Balances() {
   return (
     <div className="text-light d-flex h-100 w-100 align-items-center justify-content-center p-3 p-sm-3 p-lg-4 p-xxl-5">
       <div
-        className="p-3 p-sm-3 p-lg-4 p-xxl-5 rounded rgbShadow border border-secondary  glassMorphism overflow-auto h-100 w-100"
-        style={{ maXheight: "100%" }}
+        className="p-3 p-sm-3 p-lg-4 p-xxl-5 rounded border border-secondary rgbShadow glassMorphism overflow-auto h-100 w-100"
+        style={{ maXheight: "100%", overflowX:"hidden !important" }}
       >
         <h2 className="neonText pt-4">ERC 20 Balances</h2>
         <ERC20Balances className="text-break text-wrap" />
@@ -43,7 +43,7 @@ const ERC20Balances = () => {
   return (
     <div>
       <div className="d-flex justify-content-between ">
-        <ButtonRGB
+        <RGBButton
           className="border border-secondary bg-dark"
           onClick={() => {
             setShown(true);
@@ -56,8 +56,8 @@ const ERC20Balances = () => {
           }}
         >
           Refetch ERC20Balances
-        </ButtonRGB>
-        <ButtonRGB
+        </RGBButton>
+        <RGBButton
           className="border border-secondary"
           onClick={() => setShown(!shown)}
         >
@@ -72,7 +72,7 @@ const ERC20Balances = () => {
               <AiFillEye className="ms-3" />{" "}
             </>
           )}
-        </ButtonRGB>
+        </RGBButton>
       </div>
       {error && <>{JSON.stringify(error)}</>}
       <pre
@@ -105,7 +105,7 @@ const ERC20Transfers = () => {
   return (
     <div>
       <div className="d-flex justify-content-between ">
-        <ButtonRGB
+        <RGBButton
           className="border border-secondary bg-dark"
           onClick={() => {
             setShown(true);
@@ -118,8 +118,8 @@ const ERC20Transfers = () => {
           }}
         >
           Refetch ERC20Transfers
-        </ButtonRGB>
-        <ButtonRGB
+        </RGBButton>
+        <RGBButton
           className="border border-secondary"
           onClick={() => setShown(!shown)}
         >
@@ -134,7 +134,7 @@ const ERC20Transfers = () => {
               <AiFillEye className="ms-3" />{" "}
             </>
           )}
-        </ButtonRGB>
+        </RGBButton>
       </div>
       {error && <>{JSON.stringify(error)}</>}
       <pre
@@ -173,7 +173,7 @@ function NativeBalance() {
   return (
     <div>
       <div className="d-flex justify-content-between ">
-        <ButtonRGB
+        <RGBButton
           className="border border-secondary bg-dark"
           onClick={() => {
             setShown(true);
@@ -186,8 +186,8 @@ function NativeBalance() {
           }}
         >
           Refetch NativeBalance
-        </ButtonRGB>
-        <ButtonRGB
+        </RGBButton>
+        <RGBButton
           className="border border-secondary"
           onClick={() => setShown(!shown)}
         >
@@ -202,7 +202,7 @@ function NativeBalance() {
               <AiFillEye className="ms-3" />{" "}
             </>
           )}
-        </ButtonRGB>
+        </RGBButton>
       </div>
       {error && <>{JSON.stringify(error)}</>}
       <pre
@@ -244,7 +244,7 @@ const NativeTransactions = () => {
   return (
     <div>
       <div className="d-flex justify-content-between ">
-        <ButtonRGB
+        <RGBButton
           className="border border-secondary bg-dark"
           onClick={() => {
             setShown(true);
@@ -257,8 +257,8 @@ const NativeTransactions = () => {
           }}
         >
           Refetch NativeTransactions
-        </ButtonRGB>
-        <ButtonRGB
+        </RGBButton>
+        <RGBButton
           className="border border-secondary"
           onClick={() => setShown(!shown)}
         >
@@ -273,7 +273,7 @@ const NativeTransactions = () => {
               <AiFillEye className="ms-3" />{" "}
             </>
           )}
-        </ButtonRGB>
+        </RGBButton>
       </div>
       {error && <>{JSON.stringify(error)}</>}
       <pre
@@ -306,7 +306,7 @@ const NFTBalances = () => {
   return (
     <div>
       <div className="d-flex justify-content-between ">
-        <ButtonRGB
+        <RGBButton
           className="border border-secondary bg-dark"
           onClick={() => {
             setShown(true);
@@ -319,8 +319,8 @@ const NFTBalances = () => {
           }}
         >
           Refetch NFTBalances
-        </ButtonRGB>
-        <ButtonRGB
+        </RGBButton>
+        <RGBButton
           className="border border-secondary"
           onClick={() => setShown(!shown)}
         >
@@ -335,7 +335,7 @@ const NFTBalances = () => {
               <AiFillEye className="ms-3" />{" "}
             </>
           )}
-        </ButtonRGB>
+        </RGBButton>
       </div>
       {error && <>{JSON.stringify(error)}</>}
       <pre
@@ -368,7 +368,7 @@ const NFTTransfers = () => {
   return (
     <div>
       <div className="d-flex justify-content-between ">
-        <ButtonRGB
+        <RGBButton
           className="border border-secondary bg-dark"
           onClick={() => {
             setShown(true);
@@ -381,8 +381,8 @@ const NFTTransfers = () => {
           }}
         >
           Refetch NFTTransfers
-        </ButtonRGB>
-        <ButtonRGB
+        </RGBButton>
+        <RGBButton
           className="border border-secondary"
           onClick={() => setShown(!shown)}
         >
@@ -397,7 +397,7 @@ const NFTTransfers = () => {
               <AiFillEye className="ms-3" />{" "}
             </>
           )}
-        </ButtonRGB>
+        </RGBButton>
       </div>
       {error && <>{JSON.stringify(error)}</>}
       <pre

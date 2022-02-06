@@ -1,7 +1,8 @@
 import { useMoralis, useWeb3Transfer } from "react-moralis";
 import { useState } from "react";
-import ButtonRGB from "./ui/ButtonRGB";
+import RGBButton from "./ui/RGBButton";
 import Modal from "./ui/Modal";
+import RGBBorder from "./ui/RGBBorder";
 
 export default function Transfer() {
   const { Moralis } = useMoralis();
@@ -47,7 +48,7 @@ export default function Transfer() {
 
   return (
     <>
-      <div className="p-3 p-sm-3 p-lg-4 p-xxl-5 rounded rgbShadow border border-secondary  glassMorphism text-center">
+      <RGBBorder className="p-3 p-sm-3 p-lg-4 p-xxl-5 rounded border border-secondary  glassMorphism text-center">
         <h2 className="neonText mb-5">Transfer Assets</h2>
         <div>
           <input
@@ -64,10 +65,10 @@ export default function Transfer() {
             onChange={(e) => setAmount(e.target.value)}
           />
         </div>
-        <ButtonRGB onClick={() => send()} className="border-secondary mt-5">
+        <RGBButton onClick={() => send()} className="border-secondary mt-5">
           Send
-        </ButtonRGB>
-      </div>
+        </RGBButton>
+      </RGBBorder>
       {data !== null && modalToggle === true && (
         <Modal show={modalToggle} handleModal={() => setModalToggle(false)}>
           <div className="p-5 border border-secondary rounded text-wrap">

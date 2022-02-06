@@ -1,4 +1,4 @@
-import ButtonRGB from "./ButtonRGB";
+import RGBButton from "./RGBButton";
 import { BiSend, BiLockAlt, BiCoin, BiRocket, BiHive } from "react-icons/bi";
 import { connect } from "react-redux";
 import { sideViewChanged } from "../../redux/actions";
@@ -10,46 +10,46 @@ const Side = ({ changeView }) => {
      border-end border-secondary h-100 d-flex flex-column 
      glassMorphism justify-content-evenly"
     >
-      <ButtonRGB
+      <RGBButton
         onClick={() => changeView("Upcoming")}
         className="bg-dark border-secondary d-flex
       justify-content-center"
       >
         <BiRocket className="me-3" />
         Upcoming
-      </ButtonRGB>
-      <ButtonRGB
+      </RGBButton>
+      <RGBButton
         onClick={() => changeView("Stake")}
         className="bg-dark border-secondary d-flex
         justify-content-center"
       >
         <BiLockAlt className="me-3" />
         Stake
-      </ButtonRGB>
-      <ButtonRGB
+      </RGBButton>
+      <RGBButton
         onClick={() => changeView("Transfer")}
         className="bg-dark border-secondary d-flex
        justify-content-center"
       >
         <BiSend className="me-3" />
         Transfer
-      </ButtonRGB>
-      <ButtonRGB
+      </RGBButton>
+      <RGBButton
         onClick={() => changeView("Assets")}
         className="bg-dark border-secondary d-flex
       justify-content-center"
       >
         <BiCoin className="me-3" />
         Assets
-      </ButtonRGB>
-      <ButtonRGB
+      </RGBButton>
+      <RGBButton
         onClick={() => changeView("Skordat")}
         className="bg-dark border-secondary d-flex
       justify-content-center"
       >
         <BiHive className="me-3" />
         Skordat
-      </ButtonRGB>
+      </RGBButton>
     </div>
   );
 };
