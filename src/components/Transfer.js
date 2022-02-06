@@ -16,11 +16,10 @@ export default function Transfer() {
   const [amount, setAmount] = useState();
   const [address, setAddress] = useState();
   const [modalToggle, setModalToggle] = useState(false);
-  // const [user, setUserAddress] = useState()
   const [data, setData] = useState(null);
   const decimals = 1000000000000000000;
 
-  const send = async (amount, address) => {
+  const send = async () => {
     const options = {
       type: "native",
       amount: Moralis.Units.ETH(amount),
