@@ -5,18 +5,18 @@ import Loader from "../ui/Loader";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 export default function ERC20Transfers() {
-  const [shown, setShown] = React.useState(true);
+  const [shown, setShown] = React.useState(false);
   const { fetchERC20Transfers, data, error, isLoading, isFetching } =
     useERC20Transfers();
 
-  React.useEffect(() => {
-    fetchERC20Transfers({
-      params: {
-        chain: "bsc",
-        address: "0x898A9Eb0f6e49c8f5D33E678dd4bEfDCff77552A",
-      },
-    });
-  }, []);
+  // React.useEffect(() => {
+  //   fetchERC20Transfers({
+  //     params: {
+  //       chain: "bsc",
+  //       address: "0x898A9Eb0f6e49c8f5D33E678dd4bEfDCff77552A",
+  //     },
+  //   });
+  // }, []);
 
   return (
     <div>

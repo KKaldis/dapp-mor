@@ -5,7 +5,7 @@ import Loader from "../ui/Loader";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 export default function NFTBalances() {
-  const [shown, setShown] = React.useState(true);
+  const [shown, setShown] = React.useState(false);
   const { getNFTBalances, data, error, isLoading, isFetching } =
     useNFTBalances();
 

@@ -5,7 +5,7 @@ import Loader from "../ui/Loader";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 export default function NativeTransactions() {
-  const [shown, setShown] = React.useState(true);
+  const [shown, setShown] = React.useState(false);
   const { getNativeTransations, data, chainId, error, isLoading, isFetching } =
     useNativeTransactions({
       params: {
