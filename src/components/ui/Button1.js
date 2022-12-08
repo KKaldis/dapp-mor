@@ -1,21 +1,15 @@
 import { useState } from "react";
-import { useMoralis } from "react-moralis";
 import RGBButton from "./RGBButton";
-import { IoWalletOutline } from "react-icons/io5";
-import Modal from "./Modal";
 
-export default function ButtonLogin() {
-  const { authenticate, isAuthenticated, logout, user } = useMoralis();
-
+export default function Button1({ children }) {
   const [hovered, setHovered] = useState(false);
 
-  return !isAuthenticated ? (
+  return true ? (
     <RGBButton
       className={`bg-dark border-primary ${!hovered ? "rgbShadow neonText" : null
         }`}
-      onClick={() => authenticate({ signingMessage: "QIFSHA" })}
     >
-      <IoWalletOutline className="me-3" /> Download CV
+      {children}
     </RGBButton>
   ) : (
     <div
@@ -30,8 +24,8 @@ export default function ButtonLogin() {
       // message={` 0x...${user.attributes.ethAddress.slice(-4)}`}
       // messagehover="Logout"
       >
-        <IoWalletOutline className="me-3" />
-        {` 0x...${user.attributes.ethAddress.slice(-4)}`}
+
+        {children}
       </RGBButton>
       <ul>
         <li
@@ -45,9 +39,8 @@ export default function ButtonLogin() {
             opacity: hovered ? 1 : 0,
             margin: "0rem 1rem",
           }}
-          onClick={() => logout()}
         >
-          Logout
+          {children}
         </li>
       </ul>
     </div>
