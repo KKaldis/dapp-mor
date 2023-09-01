@@ -5,7 +5,7 @@ import Logo from "./ui/Logo";
 export default function TopBar() {
   return (
     <div
-      className="p-3 p-sm-3 p-lg-4 p-xxl-5 border-bottom border-secondary align-items-center d-flex justify-content-between glassMorphism"
+      className="p-2 p-sm-2 p-lg-3 p-xxl-4 border-bottom border-secondary align-items-center d-flex justify-content-between glassMorphism"
       style={{ top: "0" }}
     >
       <Logo />

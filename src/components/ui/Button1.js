@@ -6,8 +6,9 @@ export default function Button1({ children }) {
 
   return true ? (
     <RGBButton
-      className={`bg-dark border-primary ${!hovered ? "rgbShadow neonText" : null
-        }`}
+      className={`bg-dark border-primary ${
+        !hovered ? "rgbShadow neonText" : null
+      }`}
     >
       {children}
     </RGBButton>
@@ -21,10 +22,9 @@ export default function Button1({ children }) {
     >
       <RGBButton
         className="bg-dark border-primary w-100 logout"
-      // message={` 0x...${user.attributes.ethAddress.slice(-4)}`}
-      // messagehover="Logout"
+        // message={` 0x...${user.attributes.ethAddress.slice(-4)}`}
+        // messagehover="Logout"
       >
-
         {children}
       </RGBButton>
       <ul>

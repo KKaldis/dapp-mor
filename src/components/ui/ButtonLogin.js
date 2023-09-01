@@ -1,21 +1,25 @@
 import { useState } from "react";
-import { useMoralis } from "react-moralis";
+// import { useMoralis } from "react-moralis";
 import RGBButton from "./RGBButton";
 import { IoWalletOutline } from "react-icons/io5";
+import { FaConnectdevelop } from "react-icons/fa";
 import Modal from "./Modal";
 
 export default function ButtonLogin() {
-  const { authenticate, isAuthenticated, logout, user } = useMoralis();
+  // const { authenticate, isAuthenticated, logout, user } = useMoralis();
 
   const [hovered, setHovered] = useState(false);
 
-  return !isAuthenticated ? (
+  return true ? (
     <RGBButton
-      className={`bg-dark border-primary ${!hovered ? "rgbShadow neonText" : null
-        }`}
-      onClick={() => authenticate({ signingMessage: "QIFSHA" })}
+      className={`bg-dark border-primary ${
+        !hovered ? "rgbShadow neonText" : null
+      }`}
+      // onClick={() => authenticate({ signingMessage: "Logging" })}
     >
-      <IoWalletOutline className="me-3" /> Download CV
+      {/* <IoWalletOutline className="me-3" />  */}
+      <FaConnectdevelop className="me-3 mb-0 rotateZ h4" color="white" />
+      Connect
     </RGBButton>
   ) : (
     <div
@@ -27,11 +31,11 @@ export default function ButtonLogin() {
     >
       <RGBButton
         className="bg-dark border-primary w-100 logout"
-      // message={` 0x...${user.attributes.ethAddress.slice(-4)}`}
-      // messagehover="Logout"
+        // message={` 0x...${user.attributes.ethAddress.slice(-4)}`}
+        // messagehover="Logout"
       >
         <IoWalletOutline className="me-3" />
-        {` 0x...${user.attributes.ethAddress.slice(-4)}`}
+        {"0x...654}"}
       </RGBButton>
       <ul>
         <li
@@ -45,7 +49,7 @@ export default function ButtonLogin() {
             opacity: hovered ? 1 : 0,
             margin: "0rem 1rem",
           }}
-          onClick={() => logout()}
+          // onClick={() => logout()}
         >
           Logout
         </li>

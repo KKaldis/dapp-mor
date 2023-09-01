@@ -1,11 +1,24 @@
+import { ToastContainer } from "react-toastify";
 import Layout from "./components/Layout";
 import Login from "./components/Login";
-import { useMoralis } from "react-moralis";
+import Welcome from "./components/Welcome";
+import { connect } from "react-redux";
 
 function App() {
-  const { isAuthenticated } = useMoralis();
-
-  return <Layout>{!isAuthenticated && <Login />}</Layout>;
+  return (
+    <Layout>
+      <span className="stripes"></span>
+      <ToastContainer style={{ zIndex: 1 }} />
+      {/* <ToastContainer style={{ zIndex: 1 }} id="toastIdComplete" /> */}
+      <Login />
+      {/* <Welcome /> */}
+    </Layout>
+  );
 }
 
-export default App;
+const mapStateToProps = (state) => ({});
+
+const mapDispatchToProps = (dispatch) => ({});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+// export default App;
