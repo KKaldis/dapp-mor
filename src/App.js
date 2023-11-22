@@ -3,8 +3,14 @@ import Layout from "./components/Layout";
 import Login from "./components/Login";
 import Welcome from "./components/Welcome";
 import { connect } from "react-redux";
+import { FaConnectdevelop } from "react-icons/fa";
+import { useEffect } from "react";
 
-function App() {
+function App({ decoding }) {
+  const { isDecoding } = decoding;
+
+  useEffect(() => {}, [isDecoding]);
+
   return (
     <Layout>
       <span className="stripes"></span>
@@ -16,7 +22,9 @@ function App() {
   );
 }
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  decoding: state.decoding,
+});
 
 const mapDispatchToProps = (dispatch) => ({});
 
