@@ -102,7 +102,7 @@ const Login = ({ decoding, changeDecodingTime, changeIsDecoding }) => {
 
           {!isDecoding && (
             <RGBButton
-              className="bg-dark border-primary rgbShadow"
+              className="bg-dark border-primary rgbShadow "
               hasAnimate={!isDecoding}
             >
               <div>OK!</div>
